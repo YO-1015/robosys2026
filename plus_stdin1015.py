@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2026 YO-1015
+
+
 import sys
 
 
