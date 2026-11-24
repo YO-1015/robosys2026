@@ -9,7 +9,7 @@ ng () {
 
 res=0
 
-out=$(echo 2.5 64 20 2.5 | ./aimgpa)
+out=$(echo 2.5 60 20 2.5 | ./aimgpa)
 [ "$?" = 0 ] || ng "$LINENO"
 expected="目標GPA達成に必要な今学期のGPA : 3.70
 達成可能"
