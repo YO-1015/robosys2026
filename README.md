@@ -14,13 +14,13 @@
 (入力例)  
 ```$ echo 2.5 60 20 2.8 | ./aimgpa```   
 (出力例)  
-3.70  
+```3.70```  
 
 ## インストール方法
 以下のコマンド実行してリポジトリをクローンし、ディレクトリに移動します。
-```bash```
-$ git clone https://github.com/YO-1015/robosys2026.git
-$ cd robosys2026
+```bash
+$ git clone https://github.com/YO-1015/robosys2026.git  
+$ cd robosys2026```
 
 ## 必要なソフトウェア
 - Python
