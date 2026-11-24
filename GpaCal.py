@@ -28,3 +28,8 @@ if earned_credits < 0 or current_credits <= 0:
 if not (0.0 <= current_gpa <= 4.0 and 0.0 <= target_gpa <= 4.0):
     sys.stdeer.write("入力エラー: GPAは0.0から4.0の範囲で指定する必要があります\n")
     sys.exit(1)
+
+total_credits = earned_credits + current_credits
+required_gpa = (target_gpa * total_credits - current_gpa * earned_credits) / current_credits
+
+print(f"目標GPA達成に必要な今学期のGPA : {required_gpa:.2f}")
