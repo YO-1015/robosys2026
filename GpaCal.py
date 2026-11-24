@@ -14,6 +14,17 @@ if len(tokens) != 4:
 
 try:
     current_gpa = float(tokens[0])
+    earned_credits = float(tokens[1])
+    current_credits = float(tokens[2])
+    target_gpa = float(token[3])
 except ValueError:
     sys.stderr.write("入力エラー : すべて数値で入力する必要があります\n")
+    sys.exit(1)
+
+if earned_credits < 0 or current_credits <= 0:
+    sys.stderr.write("入力エラー : 単位数が不正です\n")
+    sys.exit(1)
+
+if not (0.0 <= current_gpa <= 4.0 and 0.0 <= target_gpa <= 4.0):
+    sys.stdeer.write("入力エラー: GPAは0.0から4.0の範囲で指定する必要があります\n")
     sys.exit(1)
