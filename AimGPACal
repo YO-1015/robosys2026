@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+ii#!/usr/bin/python3
 #SPDX-FileCopyrightText: 2026 YO-1015 <s25c1020kz@chitatech.ac.jp>
 #SPDX-Licinse-Identifier: BSD-3-Clause
 
@@ -33,3 +33,7 @@ total_credits = earned_credits + current_credits
 required_gpa = (target_gpa * total_credits - current_gpa * earned_credits) / current_credits
 
 print(f"目標GPA達成に必要な今学期のGPA : {required_gpa:.2f}")
+
+if __name__ == "__main__":
+    main()
+
