@@ -33,12 +33,7 @@ def main():
     total_credits = earned_credits + current_credits
     required_gpa = (target_gpa * total_credits - current_gpa * earned_credits) / current_credits
 
-    print(f"目標GPA達成に必要な今学期のGPA : {required_gpa:.2f}")
-
-    if required_gpa > 4.0:
-        print("達成不可")
-    else:
-        print("達成可能")
+    print(f" {required_gpa:.2f}")
 
 if __name__ == "__main__":
     main()
