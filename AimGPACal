@@ -16,7 +16,7 @@ try:
     current_gpa = float(tokens[0])
     earned_credits = float(tokens[1])
     current_credits = float(tokens[2])
-    target_gpa = float(token[3])
+    target_gpa = float(tokens[3])
 except ValueError:
     sys.stderr.write("入力エラー : すべて数値で入力する必要があります\n")
     sys.exit(1)
