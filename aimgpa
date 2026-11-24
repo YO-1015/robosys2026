@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-#SPDX-FileCopyrightText: 2026 YO-1015 <s25c1020kz@chitatech.ac.jp>
-#SPDX-Licinse-Identifier: BSD-3-Clause
+# SPDX-FileCopyrightText: 2026 YO-1015 <s25c1020kz@chitatech.ac.jp>
+# SPDX-License-Identifier: BSD-3-Clause
 
 import sys
 
@@ -27,7 +27,7 @@ def main():
         sys.exit(1)
 
     if not (0.0 <= current_gpa <= 4.0 and 0.0 <= target_gpa <= 4.0):
-        sys.stdeer.write("入力エラー: GPAは0.0から4.0の範囲で指定する必要があります\n")
+        sys.stderr.write("入力エラー: GPAは0.0から4.0の範囲で指定する必要があります\n")
         sys.exit(1)
 
     total_credits = earned_credits + current_credits

@@ -1,26 +1,48 @@
 #!/bin/bash
-# SPDX-FileCopyrightText: 2026 Taro Suzuki
+# SPDX-FileCopyrightText: 2026 YO-1015 <s25c1020kz@chibatech.ac.jp>
 # SPDX-License-Identifier: BSD-3-Clause
 
-ng () {                               # 関数ngの定義（P18と同じ）
+ng () {
         echo ${1}行目のテスト失敗
-        res=1                          # 失敗したことを記録
+        res=1
 }
 
-res=0                                  # 0: 失敗なし（ngが呼ばれると1になる）
+res=0
 
-### NORMAL INPUT ###
-out=$(seq 5 | ./plus)
-[ "$?" = 0 ]      || ng "$LINENO"
-[ "${out}" = 15 ] || ng "$LINENO"  
+out=$(echo 2.5 64 20 2.5 | ./aimgpa)
+[ "$?" = 0 ] || ng "$LINENO"
+expected="目標GPA達成に必要な今学期のGPA : 3.70
+達成可能"
+[ "${out}" = "${expected}" ] || ng "$LINENO"
 
-### STRANGE INPUT ###
-out=$(echo あ | ./plus)           #計算できない値を入力してみる
-[ "$?" = 1 ]      || ng "$LINENO" #終了ステータスが1なのを確認
-[ "${out}" = "" ] || ng "$LINENO" #上の行と入れ替えるとダメ（なぜ？）
+out=$(echo "2.5 60 20 3.0" | ./aimgpa)
+[ "$?" = 0 ] || ng "$LINENO"
+expected="目標GPA達成に必要な今学期のGPA : 4.50
+達成不可"
+[ "${out}" = "${expected}" ] || ng "$LINENO"
 
-out=$(echo | ./plus)              #なにも入力しない
-[ "$?" = 1 ]      || ng "$LINENO" #これも異常終了する
+out=$(echo "2.5 60 20" | ./aimgpa)
+[ "$?" = 1 ]      || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+out=$(echo | ./aimgpa)
+[ "$?" = 1 ]      || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+out=$(echo "2.5 あ 20 2.8" | ./aimgpa)
+[ "$?" = 1 ]      || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+out=$(echo "2.5 60 0 2.8" | ./aimgpa)
+[ "$?" = 1 ]      || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+out=$(echo "2.5 -10 20 2.8" | ./aimgpa)
+[ "$?" = 1 ]      || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+out=$(echo "4.5 60 20 3.0" | ./aimgpa)
+[ "$?" = 1 ]      || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
 
 [ "${res}" = 0 ] && echo OK
