@@ -9,7 +9,7 @@ tokens = sys.stdin.read().split()
 def main():
     if len(tokens) != 4:
         sys.stderr.write(
-                "入力エラー : 4つの数値を入力する必要があります(現在のGPA、修得済単位数、今学期履修中単位数、目標GPA\n"
+                "入力エラー : 4つの数値を入力する必要があります(現在のGPA、修得済単位数、今学期履修中単位数、目標GPA\n)"
                 )
         sys.exit(1)
 
