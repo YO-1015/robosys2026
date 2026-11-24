@@ -12,14 +12,16 @@
 - 今学期履修中の単位数  
 - 目標とするGPA  
 (入力例)  
-```bash
+```
 $ echo 2.5 60 20 2.8 | ./aimgpa
+```
 
 ## インストール方法
 以下のコマンドを実行してリポジトリをクローンし、ディレクトリに移動します。
-```bash
+```
 $ git clone https://github.com/YO-1015/robosys2026.git  
-$ cd robosys2026```
+$ cd robosys2026
+```
 
 ## 必要なソフトウェア
 - Python
