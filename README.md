@@ -1,10 +1,21 @@
 # robosys2026
 4s Thursday 3
 
-# plusコマンド
+# aimgpaコマンド
 ![test](https://github.com/YO-1015/robosys2026/actions/workflows/test.yml/badge.svg)
 
-標準入力から読み込んだ数字を足す。
+大学の成績(GPA)について、使用者が目標とするGPAを達成するためには今学期のGPAがいくつ以上である必要があるかを計算するコマンドです。
+
+以下の４つの数値を(入力例)のように入力して使用します。
+・今学期までのGPA
+・修得済単位数
+・今学期履修中の単位数
+・目標とするGPA
+(入力例)
+$ echo 2.5 60 20 2.8 | ./aimgpa
+(出力例)
+目標GPA達成に必要な今学期のGPA : 3.70
+達成可能
 
 ## 必要なソフトウェア
 - Python
