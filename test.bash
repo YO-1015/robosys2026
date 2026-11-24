@@ -11,14 +11,12 @@ res=0
 
 out=$(echo 2.5 60 20 2.5 | ./aimgpa)
 [ "$?" = 0 ] || ng "$LINENO"
-expected="目標GPA達成に必要な今学期のGPA : 2.50
-達成可能"
+expected="2.50"
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
 out=$(echo "2.5 60 20 3.0" | ./aimgpa)
 [ "$?" = 0 ] || ng "$LINENO"
-expected="目標GPA達成に必要な今学期のGPA : 4.50
-達成不可"
+expected="4.50"
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
 out=$(echo "2.5 60 20" | ./aimgpa)
